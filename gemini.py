@@ -1,7 +1,11 @@
 import google.generativeai as genai
+from dotenv import load_dotenv
+import os
+load_dotenv()
+KEY=os.getenv("GEMINI_KEY")
 class gemini_class:
     def __init__(self):
-        self.api_key="AIzaSyCslRDThpC7ZCXUSTNNZFYispZ-XNgd1f4"
+        self.api_key=KEY
         genai.configure(api_key=self.api_key)
 
     def process_policy(self, policy):
