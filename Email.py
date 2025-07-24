@@ -2,6 +2,7 @@ import smtplib, imaplib, email, time
 from datetime import datetime
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
+import os
 
 class EmailAutoReply:
     def __init__(self, email_addr, password, smtp_server='smtp.gmail.com', imap_server='imap.gmail.com'):
