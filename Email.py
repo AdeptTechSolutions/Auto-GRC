@@ -59,10 +59,6 @@ class EmailAutoReply:
     
     def send_with_followup(self, recipient, subject, message, follow_up_message, wait_seconds=30):
         self.connect()
-        """Send email and wait for reply, send follow-up if no response"""
-        
-        #start_time = datetime.now()
-        print("yahan par email:",recipient)
         self.send_email(recipient,subject,message)
 
         return 

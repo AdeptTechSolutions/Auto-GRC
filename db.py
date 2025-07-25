@@ -31,7 +31,7 @@ class CompanyDatabase:
                 position TEXT,
                 department TEXT,
                 work_mode TEXT CHECK(work_mode IN ('Remote', 'Onsite')),
-                email TEXT CHECK(email LIKE '%@gmail.com')
+                email 
             );
             """)
             
@@ -538,11 +538,8 @@ class CompanyDatabase:
         """Initialize database with sample data"""
         # Sample employees
         employees = [
-            ("Muhammad Hamza", 29, "Male", "Software Engineer", "IT", "Remote", "hking1917@gmail.com"),
-            ("Bob Johnson", 35, "Male", "Compliance Officer", "Compliance", "Onsite", "bob.johnson@gmail.com"),
-            ("Carol Lee", 42, "Female", "HR Manager", "HR", "Onsite", "carol.lee@gmail.com"),
-            ("fAST NUCES", 28, "Male", "Software Developer", "IT", "Remote", "mhamzacpp@gmail.com"),
-            ("Emma Wilson", 31, "Female", "Compliance Analyst", "Compliance", "Onsite", "emma.wilson@gmail.com"),
+            ("Muhammad Hamza1", 29, "Male", "Software Engineer", "IT", "Remote", "i210869@nu.edu.pk"),
+            ("Muhammad Hamza2", 28, "Male", "Software Developer", "IT", "Remote", "mhamzacpp@gmail.com"),
         ]
         
         # Sample policies

@@ -199,8 +199,6 @@ def implement_policy_background(policy):
     except Exception as e:
         return False, f"Error implementing policy: {str(e)}", 0
 
-
-# You'll also need to add this method to your CompanyDatabase class:
 def search_employees_full(self, **kwargs):
     """
     Search employees by various criteria and return full employee records
@@ -565,59 +563,35 @@ def dashboard_page():
                             try:
                                 implement_policy_background(policy)
                             #     # Step 1: Finding recipients
-                            #     status_placeholder.info("📋 Finding recipients...")
-                            #     progress_bar.progress(20)
-                            #     time.sleep(0.5)  # Brief pause for visual feedback
+                                status_placeholder.info("📋 Finding recipients...")
+                                progress_bar.progress(20)
+                                time.sleep(0.5)  # Brief pause for visual feedback
                                 
-                            #     # Check recipients first
-                            #     emails = db.search_employees(department=policy['department'], work_mode=policy['work_mode'])
-                            #     if emails.empty:
-                            #         status_placeholder.error("❌ No recipients found for this policy")
-                            #         progress_bar.empty()
-                            #         time.sleep(2)
-                            #         status_placeholder.empty()
-                            #         continue
                                 
                             #     # Step 2: Processing with AI
-                            #     status_placeholder.info("🤖 Processing with AI...")
-                            #     progress_bar.progress(40)
-                            #     time.sleep(0.5)
-                                
-                            #     g = gemini_class()
-                            #     gemini_output = g.process_policy(policy['text'])
+                                status_placeholder.info("🤖 Processing with AI...")
+                                progress_bar.progress(40)
+                                time.sleep(0.5)
+                            
                                 
                             #     # Step 3: Sending emails
-                            #     status_placeholder.info("📧 Sending emails...")
-                            #     progress_bar.progress(70)
-                            #     time.sleep(0.5)
+                                status_placeholder.info("📧 Sending emails...")
+                                progress_bar.progress(70)
+                                time.sleep(0.5)
                                 
-                            #     subject, body = parse_email(text=gemini_output)
-                            #     email_bot.send_with_followup(emails, subject, body, "Please reply", 30)
                                 
                             #     # Step 4: Updating database
-                            #     status_placeholder.info("💾 Updating database...")
-                            #     progress_bar.progress(90)
-                            #     time.sleep(0.5)
+                                status_placeholder.info("💾 Updating database...")
+                                progress_bar.progress(90)
+                                time.sleep(0.5)
                                 
-                            #     db.update_policy(policy['id'], status="Implemented")
                                 
                             #     # Success
-                            #     progress_bar.progress(100)
-                            #     status_placeholder.success(f"✅ Policy #{policy['id']} implemented successfully! Sent to {len(emails)} recipients.")
+                                progress_bar.progress(100)
+                                status_placeholder.success(f"✅ Policy #{policy['id']} implemented successfully! Sent to  recipients.")
+                                time.sleep(0.5)
+                                st.rerun()
                                 
-                            #     # Show brief summary
-                            #     with st.expander(f"Implementation Summary - Policy #{policy['id']}", expanded=False):
-                            #         st.write(f"✅ Policy processed with AI")
-                            #         st.write(f"✅ Emails sent to {len(emails)} recipients:")
-                            #         for email in emails:
-                            #             st.write(f"   • {email}")
-                            #         st.write(f"✅ Policy status updated to 'Implemented'")
-                                
-                            #     # Clear status after showing success
-                            #     time.sleep(3)
-                            #     status_placeholder.empty()
-                            #     progress_bar.empty()
-                            #     st.rerun()  # Refresh to show updated status
                                 
                             except Exception as e:
                                 status_placeholder.error(f"❌ Error implementing policy: {str(e)}")
